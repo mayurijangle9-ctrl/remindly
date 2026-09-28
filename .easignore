@@ -1,0 +1,37 @@
+# Remindly EAS Ignore Configuration
+# Prevents sensitive local databases, environment secrets, and build bloat
+# from leaking into EAS cloud builds and OTA update bundles.
+
+# SQLite local databases and WAL write-ahead logs
+*.db
+*.db-wal
+*.db-shm
+remindly.db*
+
+# Environment secrets and local API keys
+.env
+.env.local
+.env.*.local
+*.env
+
+# Local development logs, debug outputs, and scratch files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+scratch/
+.system_generated/
+*.tmp
+
+# Source maps to prevent code leak into OTA updates
+*.js.map
+*.ts.map
+
+# Build artifacts & local caches
+dist/
+web-build/
+.expo/
+.expo-shared/
+node_modules/
+.git/
+.gitignore
